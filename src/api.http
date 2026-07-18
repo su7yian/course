@@ -1,0 +1,68 @@
+###
+
+GET http://localhost:3000/songs/
+
+###
+GET http://localhost:3000/songs/7
+
+###
+POST http://localhost:3000/songs/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiYWFoQGdtYWlsLmNvbSIsInRva2VuVmVyc2lvbiI6MywiaWF0IjoxNzg0MzY3MjgxLCJleHAiOjE3ODQzNjgxODF9.bbxZKhp2ieWUvioGaBkGKOEomXf_Y0UVQRjdhdMkivk
+Content-Type: application/json
+
+{
+    "title": "mySong",
+    "releaseDate": "2025-02-04",
+    "duration": 240
+}
+###
+PATCH http://localhost:3000/songs/2
+Content-Type: application/json
+
+{    "title": "faltu",
+     "lyrics": "nesti nestu nesta"
+}
+
+###
+DELETE http://localhost:3000/songs/4
+###
+POST http://localhost:3000/playlist/
+Content-Type: application/json
+
+{
+    "name": "ganay",
+    "songs": [1]
+}
+###
+POST http://localhost:3000/authn/signup
+Content-Type: application/json
+
+{
+"firstName": "khan",
+"lastName": "G",
+"email": "aah@gmail.com",
+"password": "123456"
+}
+
+###
+POST http://localhost:3000/authn/login
+Content-Type: application/json
+
+{
+"email": "aah@gmail.com",
+"password": "123456"
+}
+###
+GET http://localhost:3000/user/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiYWFoQGdtYWlsLmNvbSIsInRva2VuVmVyc2lvbiI6MSwiaWF0IjoxNzg0Mzc0MTM4LCJleHAiOjE3ODQzNzUwMzh9.CIcqCwPpyjCsKNRRFSNX3FxSAeVv96CvRqjfjx8DnqE
+###
+POST http://localhost:3000/authn/refresh
+Authorization: Bearer
+###
+PATCH http://localhost:3000/user/password
+Content-Type: application/json
+Authorization: Bearer
+{
+    "old_password": "123456",
+    "new_password": "1234"
+}
