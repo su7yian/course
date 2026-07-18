@@ -12,10 +12,12 @@ import { type Request } from 'express';
 import { UserService } from './user.service.js';
 import { User } from '../generated/prisma/client.js';
 import { UpdatePasswordDTO } from './dto/update_password.dto.js';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('user')
 @UseGuards(JwtAuthGuard)
-
+//tells swagger that send the bearer token with this request shows lock iocn on request
+@ApiBearerAuth('JWT-auth')
 export class UserController {
   constructor(private userService: UserService) {}
   @Get('profile')

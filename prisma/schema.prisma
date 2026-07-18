@@ -27,6 +27,7 @@ model Song {
   @@map("songs")
 }
 model User {
+
  id            Int  @id @default(autoincrement())
  firstName     String
  lastName      String
